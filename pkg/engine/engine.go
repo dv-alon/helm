@@ -203,7 +203,7 @@ func (e Engine) initFunMap(t *template.Template) {
 		if val == nil {
 			if e.LintMode {
 				// Don't fail on missing required values when linting
-				log.Printf("[INFO] Missing required value: %s", warn)
+				log.Printf("[WARN] Missing required value: %s", warn)
 				return "", nil
 			}
 			return val, errors.Errorf(warnWrap(warn))
@@ -211,7 +211,7 @@ func (e Engine) initFunMap(t *template.Template) {
 			if val == "" {
 				if e.LintMode {
 					// Don't fail on missing required values when linting
-					log.Printf("[INFO] Missing required value: %s", warn)
+					log.Printf("[WARN] Missing required value: %s", warn)
 					return "", nil
 				}
 				return val, errors.Errorf(warnWrap(warn))
